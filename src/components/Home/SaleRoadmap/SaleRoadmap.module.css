@@ -1,0 +1,149 @@
+.box {
+  background-color: #233c3f;
+  border-radius: 20px;
+  padding: 18px;
+  margin-top: 26px;
+  position: relative;
+}
+
+.box .planet {
+  position: absolute;
+  top: 160px;
+  left: 0;
+}
+
+.boxTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.rightSection {
+  background-color: #2a303533;
+  padding: 10px 24px;
+  border-radius: 10px;
+  max-width: 470px;
+  flex-grow: 1;
+}
+
+.rightSection .title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: Poppins;
+}
+
+.loader {
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background-color: #d6edff29;
+  margin-top: 4px;
+}
+
+.loaderMain {
+  background-color: #303331;
+  border-radius: 3px;
+}
+
+.loaderBar {
+  height: 12px;
+  width: 50%;
+  background-color: #1ced86;
+  border-radius: 3px;
+}
+
+.amount {
+  padding: 12px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #d6edff;
+  font-size: 11px;
+  opacity: 0.5;
+}
+
+.reserveTitle {
+  color: #d6edffcc;
+  font-weight: bold;
+  text-align: center;
+  font-family: Poppins;
+}
+
+.reserveBoxes {
+  display: flex;
+  margin-top: 20px;
+}
+
+.reserveBox {
+  color: #d6edff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background-color: #242b33;
+  border-radius: 10px;
+}
+
+.boxBottom {
+  padding: 26px;
+  display: flex;
+  background-color: #242b33;
+  border-radius: 26px;
+}
+
+.boxBottom .step {
+  width: 140px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.boxBottom .step .tickContainer {
+  border: 2px solid transparent;
+  background-color: #e5f3ff1a;
+  height: 44px;
+  border-radius: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxBottom .step.complete .tickContainer {
+  border-color: #1ced86;
+  background-color: #1ced861a;
+}
+
+.boxBottom .step .title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #e5f3ff;
+  margin: 20px 0 8px;
+  opacity: 0.6;
+}
+
+.boxBottom .step.complete .title {
+  color: #0fc76c;
+  opacity: 1;
+}
+
+.boxBottom .step .smallText {
+  font-size: 10px;
+  opacity: 0.4;
+  color: #e5f3ff;
+  margin: 2px 0;
+}
+
+.boxBottom .line {
+  height: 2px;
+  width: 50px;
+  background-color: #e5f3ff1a;
+  margin-top: 20px;
+}
+
+.boxBottom .line.completing {
+  background: linear-gradient(90deg, #1ced86 0%, #313840 65%);
+}
+
+.boxBottom .line.complete {
+  background-color: #1ced86;
+}

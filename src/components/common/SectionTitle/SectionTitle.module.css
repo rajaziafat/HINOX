@@ -1,0 +1,25 @@
+.sectionTitle {
+  color: #ddffef;
+  font-family: Poppins;
+  padding-top: 12px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.sectionTitle.center {
+  justify-content: center;
+}
+
+.sectionTitle .tag {
+  font-size: 10px;
+  color: #fff;
+  background-color: #059dff;
+  border-radius: 100px;
+  width: 28px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

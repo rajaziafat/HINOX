@@ -1,0 +1,205 @@
+.pools {
+  margin-top: 24px;
+}
+
+.stakings {
+  margin-top: 50px;
+}
+
+.stakings .stakingItem {
+  border-radius: 16px;
+  background: linear-gradient(
+      0deg,
+      rgba(36, 43, 51, 0.8) 0%,
+      rgba(36, 43, 51, 0.8) 100%
+    ),
+    rgba(36, 43, 51, 0.8);
+  padding: 12px 30px;
+  margin-bottom: 20px;
+}
+
+.stakings .stakingItem .stakingTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(228, 245, 255, 0.9);
+  text-align: right;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-family: Poppins;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.stakings .stakingItemContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  margin-top: 14px;
+}
+
+.stakings .stakingItemContent .stakingNumbers {
+  border-radius: 10px;
+  border: 1px solid rgba(64, 209, 218, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 12px;
+  text-align: center;
+}
+
+.stakings .stakingItemContent .percent1,
+.stakings .stakingItemContent .percent2 {
+  width: 55px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  padding: 5px;
+  position: relative;
+}
+
+.stakings .stakingItemContent .percent1 .tag,
+.stakings .stakingItemContent .percent2 .tag {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  background-color: #1ced86;
+  color: #0f381d;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 166.667% */
+  text-transform: capitalize;
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+}
+
+.stakings .stakingItemContent .percent1 {
+  background: #1cd4ed;
+}
+
+.stakings .stakingItemContent .percent2 {
+  background: #b1b2ff;
+}
+
+.stakings .stakingItemContent .percent1 .mainText,
+.stakings .stakingItemContent .percent2 .mainText {
+  color: #0f381d;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 111.111% */
+  text-transform: capitalize;
+}
+
+.stakings .stakingItemContent .percent1 .subText,
+.stakings .stakingItemContent .percent2 .subText {
+  color: #0f381d;
+  text-align: center;
+  font-family: ZCOOL XiaoWei;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 133.333% */
+  text-transform: capitalize;
+}
+
+.stakings .stakingItemContent .label {
+  color: #e4f5ff;
+  text-align: center;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.stakings .stakingItemContent .value {
+  color: rgba(228, 245, 255, 0.8);
+  font-variant-numeric: lining-nums tabular-nums;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.stakings .stakingItemContent .status {
+  font-variant-numeric: lining-nums tabular-nums;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.stakings .stakingItemContent .status.active {
+  color: #1ced86;
+}
+
+.stakings .stakingItemContent .status.closed {
+  color: #ed1c1c;
+}
+
+.stakings .stakingItemContent .statusDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.stakings .stakingItemContent .status.active .statusDot {
+  background-color: #1ced86;
+}
+
+.stakings .stakingItemContent .status.closed .statusDot {
+  background-color: #ed1c1c;
+}
+
+.stakings .stakingItemContent .proceed img {
+  transform: translateY(5px);
+}
+
+.stakings .stakingItemContent .proceed {
+  display: flex;
+  width: 150px;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background: #063215;
+  color: #fcfffe;
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 27px; /* 168.75% */
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.green {
+  color: #1ced86;
+}

@@ -15,6 +15,7 @@ import classes from "./Hero.module.css";
 
 import { bnb } from "images";
 import clsx from "clsx";
+import TrueFalse from "components/common/TrueFalse/TrueFalse";
 
 const Hero = () => {
   return (
@@ -84,29 +85,7 @@ const Hero = () => {
           </div>
           <div className={classes.card2}>
             <div className={classes.cardTitle}>
-              <div className={classes.cardTitleleft}>
-                <div className={classes.item}>
-                  <div className={classes.itemLeft}>
-                    <img src={registration} alt="registration" />
-                    Registration
-                  </div>
-                  <div className={classes.false}>False</div>
-                </div>
-                <div className={classes.item}>
-                  <div className={classes.itemLeft}>
-                    <img src={contributor} alt="contributor" />
-                    Contributor
-                  </div>
-                  <div className={classes.false}>False</div>
-                </div>
-                <div className={classes.item}>
-                  <div className={classes.itemLeft}>
-                    <img src={staking} alt="staking" />
-                    Staking
-                  </div>
-                  <div className={classes.true}>True</div>
-                </div>
-              </div>
+              <TrueFalse />
               <div className={classes.cardTitleRight}>
                 <img src={protectedIdo} alt="protected-ido" />
                 <div className={classes.roundEnds}>Round Ends</div>

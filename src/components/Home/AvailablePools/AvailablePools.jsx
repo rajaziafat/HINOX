@@ -51,7 +51,9 @@ const AvailablePools = () => {
                 <div className={classes.value}>40%</div>
               </div>
               <div>
-                <div className={classes.label}>Status</div>
+                <div className={clsx(classes.label, classes.statusLabel)}>
+                  Status
+                </div>
                 <div className={clsx(classes.status, classes.active)}>
                   <div className={classes.statusDot}></div> Active
                 </div>
@@ -101,7 +103,9 @@ const AvailablePools = () => {
                 <div className={classes.value}>40%</div>
               </div>
               <div>
-                <div className={classes.label}>Status</div>
+                <div className={clsx(classes.label, classes.statusLabel)}>
+                  Status
+                </div>
                 <div className={clsx(classes.status, classes.closed)}>
                   <div className={classes.statusDot}></div> Closed
                 </div>

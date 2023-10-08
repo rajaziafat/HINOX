@@ -1,0 +1,26 @@
+.title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: Poppins;
+}
+
+.loader {
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background-color: #d6edff29;
+  margin-top: 4px;
+}
+
+.loaderMain {
+  background-color: #303331;
+  border-radius: 3px;
+}
+
+.loaderBar {
+  height: 12px;
+  width: 50%;
+  background-color: #1ced86;
+  border-radius: 3px;
+}

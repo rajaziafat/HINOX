@@ -36,3 +36,70 @@ button {
 .text-light-1 {
   color: #d6edff;
 }
+
+.rdt_Table > div {
+  background-color: transparent !important;
+}
+
+.rdt_Table * {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.rdt_Table,
+.rdt_TableRow,
+.rdt_Pagination {
+  background-color: transparent !important;
+}
+
+.rdt_TableRow {
+  padding: 10px 0;
+}
+
+.rdt_TableHeadRow {
+  background: rgba(255, 255, 255, 0.1) !important;
+  text-align: center;
+}
+
+.rdt_TableCol {
+  justify-content: center;
+}
+
+.rdt_TableRow {
+  border-top: 1px solid rgba(228, 245, 255, 0.1) !important;
+  border-bottom: 1px solid rgba(228, 245, 255, 0.1) !important;
+  text-align: center;
+  margin: 8px 0;
+}
+
+.rdt_TableCell:not(:first-child) {
+  justify-content: center;
+}
+
+.splide__pagination {
+  /* bottom: rem; */
+}
+
+.splide__pagination .splide__pagination__page {
+  width: 20px;
+  height: 20px;
+  opacity: 1;
+  background-color: transparent;
+  transform: scale(1);
+}
+
+.splide__pagination .splide__pagination__page::after {
+  content: url("./images/pagination-inactive.svg");
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.splide__pagination .splide__pagination__page.is-active::after {
+  content: url("./images/pagination-active.svg");
+}

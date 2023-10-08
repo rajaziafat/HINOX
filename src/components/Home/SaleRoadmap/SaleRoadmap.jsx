@@ -1,15 +1,9 @@
 import Section from "components/common/Section/Section";
 import classes from "./SaleRoadmap.module.css";
-import {
-  emptyWalletTick,
-  planet,
-  reserveLine,
-  saleRoadmap,
-  tickCircle,
-  tickCircleGrey,
-  tickGreen,
-} from "images";
+import { planet, saleRoadmap, tickCircle, tickCircleGrey } from "images";
 import clsx from "clsx";
+import Enabled from "components/common/Enabled/Enabled";
+import Allocation from "components/common/Allocation/Allocation";
 
 const SaleRoadmap = () => {
   return (
@@ -17,21 +11,12 @@ const SaleRoadmap = () => {
       <div className={classes.box}>
         <img className={classes.planet} src={planet} alt="planet" />
         <div className={classes.boxTop}>
-          <img src={saleRoadmap} alt="sale-roadmap" />
+          <div>
+            <img src={saleRoadmap} alt="sale-roadmap" />
+          </div>
 
           <div className={classes.rightSection}>
-            <div className={classes.title}>
-              <img src={emptyWalletTick} alt="wallet" />
-              <div className="text-light-1 font-popins fs-14">
-                My Allocation
-              </div>
-            </div>
-
-            <div className={classes.loader}>
-              <div className={classes.loaderMain}>
-                <div className={classes.loaderBar}></div>
-              </div>
-            </div>
+            <Allocation />
 
             <div className={classes.amount}>
               <div>400 USD</div>
@@ -40,17 +25,7 @@ const SaleRoadmap = () => {
 
             <div className={classes.reserveTitle}>Reserve-Spot</div>
 
-            <div className={classes.reserveBoxes}>
-              <div className={classes.reserveBox}>
-                <img src={tickGreen} alt="tick-green" />
-                <div>Enabled</div>
-              </div>
-              <img src={reserveLine} alt="line" />
-              <div className={classes.reserveBox}>
-                <img src={tickGreen} alt="tick-green" />
-                <div>Executed</div>
-              </div>
-            </div>
+            <Enabled />
           </div>
         </div>
         <div className={classes.boxBottom}>

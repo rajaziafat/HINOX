@@ -33,6 +33,14 @@
   text-transform: capitalize;
 }
 
+@media screen and (max-width: 640px) {
+  .stakings .stakingItem .stakingTitle {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+}
+
 .stakings .stakingItemContent {
   display: flex;
   justify-content: space-between;
@@ -50,6 +58,40 @@
   gap: 20px;
   padding: 12px;
   text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .stakings .stakingItemContent {
+    flex-direction: column;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .stakings .stakingItemContent .stakingNumbers {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .stakings .stakingItemContent .stakingNumbers > div {
+    min-width: 100px;
+    flex-shrink: 0;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .stakings .stakingItemContent {
+    gap: 24px;
+  }
+
+  .stakings .stakingItemContent .stakingNumbers {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .stakings .stakingItemContent .stakingNumbers {
+    flex-direction: column;
+  }
 }
 
 .stakings .stakingItemContent .percent1,
@@ -149,7 +191,22 @@
   line-height: normal;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 4px;
+}
+
+.stakings .stakingItemContent .statusLabel {
+  text-align: right;
+}
+
+@media screen and (max-width: 375px) {
+  .stakings .stakingItemContent .statusLabel {
+    text-align: center;
+  }
+
+  .stakings .stakingItemContent .status {
+    justify-content: center;
+  }
 }
 
 .stakings .stakingItemContent .status.active {

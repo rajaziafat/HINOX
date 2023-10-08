@@ -1,21 +1,356 @@
+import clsx from "clsx";
+import { useEffect, useState } from "react";
+
 import Section from "components/common/Section/Section";
 import classes from "./CompletedProjects.module.css";
 import SectionTitle from "components/common/SectionTitle/SectionTitle";
 import {
   approx,
-  arrowDropdown,
   arrowDropdown2,
   bst,
   coins,
-  loadMore,
   magnifier,
   points,
   reward,
   tableProjectItem,
 } from "images";
-import clsx from "clsx";
+import Dropdown from "components/common/Dropdown/Dropdown";
+import LoadMore from "components/common/LoadMore/LoadMore";
+
+const tableRows = [
+  {
+    icon: tableProjectItem,
+    name: "Hinox Ecosystem unique",
+    hit: true,
+    participants: "100,000",
+    access: "Private",
+    idoPrice: "0.005",
+    currentPrice: "0.005",
+    ath: "0.005",
+    athIDORoi: "17.46",
+    athIDORoiGreen: "(+17056.5%)",
+    hinox: "2,000,000",
+    leadVcIcon: tableProjectItem,
+    leadVc: "Binance",
+    salesDate: "7 April, 2023",
+  },
+  {
+    icon: tableProjectItem,
+    name: "Hinox Ecosystem",
+    hit: true,
+    participants: "100,000",
+    access: "Private",
+    idoPrice: "0.005",
+    currentPrice: "0.005",
+    ath: "0.005",
+    athIDORoi: "17.46",
+    athIDORoiGreen: "(+17056.5%)",
+    hinox: "2,000,000",
+    leadVcIcon: tableProjectItem,
+    leadVc: "Binance",
+    salesDate: "7 April, 2023",
+  },
+  {
+    icon: tableProjectItem,
+    name: "Hinox Ecosystem",
+    hit: true,
+    participants: "100,000",
+    access: "Private",
+    idoPrice: "0.005",
+    currentPrice: "0.005",
+    ath: "0.005",
+    athIDORoi: "17.46",
+    athIDORoiGreen: "(+17056.5%)",
+    hinox: "2,000,000",
+    leadVcIcon: tableProjectItem,
+    leadVc: "Binance",
+    salesDate: "7 April, 2023",
+  },
+  {
+    icon: tableProjectItem,
+    name: "Hinox Ecosystem",
+    hit: true,
+    participants: "100,000",
+    access: "Private",
+    idoPrice: "0.005",
+    currentPrice: "0.005",
+    ath: "0.005",
+    athIDORoi: "17.46",
+    athIDORoiGreen: "(+17056.5%)",
+    hinox: "2,000,000",
+    leadVcIcon: tableProjectItem,
+    leadVc: "Binance",
+    salesDate: "7 April, 2023",
+  },
+  {
+    icon: tableProjectItem,
+    name: "Hinox Ecosystem",
+    hit: true,
+    participants: "100,000",
+    access: "Private",
+    idoPrice: "0.005",
+    currentPrice: "0.005",
+    ath: "0.005",
+    athIDORoi: "17.46",
+    athIDORoiGreen: "(+17056.5%)",
+    hinox: "2,000,000",
+    leadVcIcon: tableProjectItem,
+    leadVc: "Binance",
+    salesDate: "7 April, 2023",
+  },
+  {
+    icon: tableProjectItem,
+    name: "Hinox Ecosystem",
+    hit: true,
+    participants: "100,000",
+    access: "Private",
+    idoPrice: "0.005",
+    currentPrice: "0.005",
+    ath: "0.005",
+    athIDORoi: "17.46",
+    athIDORoiGreen: "(+17056.5%)",
+    hinox: "2,000,000",
+    leadVcIcon: tableProjectItem,
+    leadVc: "Binance",
+    salesDate: "7 April, 2023",
+  },
+  {
+    icon: tableProjectItem,
+    name: "Hinox Ecosystem",
+    hit: true,
+    participants: "100,000",
+    access: "Private",
+    idoPrice: "0.005",
+    currentPrice: "0.005",
+    ath: "0.005",
+    athIDORoi: "17.46",
+    athIDORoiGreen: "(+17056.5%)",
+    hinox: "2,000,000",
+    leadVcIcon: tableProjectItem,
+    leadVc: "Binance",
+    salesDate: "7 April, 2023",
+  },
+  {
+    icon: tableProjectItem,
+    name: "Hinox Ecosystem",
+    hit: true,
+    participants: "100,000",
+    access: "Private",
+    idoPrice: "0.005",
+    currentPrice: "0.005",
+    ath: "0.005",
+    athIDORoi: "17.46",
+    athIDORoiGreen: "(+17056.5%)",
+    hinox: "2,000,000",
+    leadVcIcon: tableProjectItem,
+    leadVc: "Binance",
+    salesDate: "7 April, 2023",
+  },
+  {
+    icon: tableProjectItem,
+    name: "Hinox Ecosystem",
+    hit: true,
+    participants: "100,000",
+    access: "Private",
+    idoPrice: "0.005",
+    currentPrice: "0.005",
+    ath: "0.005",
+    athIDORoi: "17.46",
+    athIDORoiGreen: "(+17056.5%)",
+    hinox: "2,000,000",
+    leadVcIcon: tableProjectItem,
+    leadVc: "Binance",
+    salesDate: "7 April, 2023",
+  },
+  {
+    icon: tableProjectItem,
+    name: "Hinox Ecosystem",
+    hit: true,
+    participants: "100,000",
+    access: "Private",
+    idoPrice: "0.005",
+    currentPrice: "0.005",
+    ath: "0.005",
+    athIDORoi: "17.46",
+    athIDORoiGreen: "(+17056.5%)",
+    hinox: "2,000,000",
+    leadVcIcon: tableProjectItem,
+    leadVc: "Binance",
+    salesDate: "7 April, 2023",
+  },
+  {
+    icon: tableProjectItem,
+    name: "Hinox Ecosystem",
+    hit: true,
+    participants: "100,000",
+    access: "Private",
+    idoPrice: "0.005",
+    currentPrice: "0.005",
+    ath: "0.005",
+    athIDORoi: "17.46",
+    athIDORoiGreen: "(+17056.5%)",
+    hinox: "2,000,000",
+    leadVcIcon: tableProjectItem,
+    leadVc: "Binance",
+    salesDate: "7 April, 2023",
+  },
+  {
+    icon: tableProjectItem,
+    name: "Hinox Ecosystem",
+    hit: true,
+    participants: "100,000",
+    access: "Private",
+    idoPrice: "0.005",
+    currentPrice: "0.005",
+    ath: "0.005",
+    athIDORoi: "17.46",
+    athIDORoiGreen: "(+17056.5%)",
+    hinox: "2,000,000",
+    leadVcIcon: tableProjectItem,
+    leadVc: "Binance",
+    salesDate: "7 April, 2023",
+  },
+  {
+    icon: tableProjectItem,
+    name: "Hinox Ecosystem",
+    hit: true,
+    participants: "100,000",
+    access: "Private",
+    idoPrice: "0.005",
+    currentPrice: "0.005",
+    ath: "0.005",
+    athIDORoi: "17.46",
+    athIDORoiGreen: "(+17056.5%)",
+    hinox: "2,000,000",
+    leadVcIcon: tableProjectItem,
+    leadVc: "Binance",
+    salesDate: "7 April, 2023",
+  },
+  {
+    icon: tableProjectItem,
+    name: "Hinox Ecosystem",
+    hit: true,
+    participants: "100,000",
+    access: "Private",
+    idoPrice: "0.005",
+    currentPrice: "0.005",
+    ath: "0.005",
+    athIDORoi: "17.46",
+    athIDORoiGreen: "(+17056.5%)",
+    hinox: "2,000,000",
+    leadVcIcon: tableProjectItem,
+    leadVc: "Binance",
+    salesDate: "7 April, 2023",
+  },
+  {
+    icon: tableProjectItem,
+    name: "Hinox Ecosystem",
+    hit: true,
+    participants: "100,000",
+    access: "Private",
+    idoPrice: "0.005",
+    currentPrice: "0.005",
+    ath: "0.005",
+    athIDORoi: "17.46",
+    athIDORoiGreen: "(+17056.5%)",
+    hinox: "2,000,000",
+    leadVcIcon: tableProjectItem,
+    leadVc: "Binance",
+    salesDate: "7 April, 2023",
+  },
+  {
+    icon: tableProjectItem,
+    name: "Hinox Ecosystem",
+    hit: true,
+    participants: "100,000",
+    access: "Private",
+    idoPrice: "0.005",
+    currentPrice: "0.005",
+    ath: "0.005",
+    athIDORoi: "17.46",
+    athIDORoiGreen: "(+17056.5%)",
+    hinox: "2,000,000",
+    leadVcIcon: tableProjectItem,
+    leadVc: "Binance",
+    salesDate: "7 April, 2023",
+  },
+  {
+    icon: tableProjectItem,
+    name: "Hinox Ecosystem",
+    hit: true,
+    participants: "100,000",
+    access: "Private",
+    idoPrice: "0.005",
+    currentPrice: "0.005",
+    ath: "0.005",
+    athIDORoi: "17.46",
+    athIDORoiGreen: "(+17056.5%)",
+    hinox: "2,000,000",
+    leadVcIcon: tableProjectItem,
+    leadVc: "Binance",
+    salesDate: "7 April, 2023",
+  },
+  {
+    icon: tableProjectItem,
+    name: "Hinox Ecosystem",
+    hit: true,
+    participants: "100,000",
+    access: "Private",
+    idoPrice: "0.005",
+    currentPrice: "0.005",
+    ath: "0.005",
+    athIDORoi: "17.46",
+    athIDORoiGreen: "(+17056.5%)",
+    hinox: "2,000,000",
+    leadVcIcon: tableProjectItem,
+    leadVc: "Binance",
+    salesDate: "7 April, 2023",
+  },
+  {
+    icon: tableProjectItem,
+    name: "Hinox Ecosystem",
+    hit: true,
+    participants: "100,000",
+    access: "Private",
+    idoPrice: "0.005",
+    currentPrice: "0.005",
+    ath: "0.005",
+    athIDORoi: "17.46",
+    athIDORoiGreen: "(+17056.5%)",
+    hinox: "2,000,000",
+    leadVcIcon: tableProjectItem,
+    leadVc: "Binance",
+    salesDate: "7 April, 2023",
+  },
+  {
+    icon: tableProjectItem,
+    name: "Hinox Ecosystem",
+    hit: true,
+    participants: "100,000",
+    access: "Private",
+    idoPrice: "0.005",
+    currentPrice: "0.005",
+    ath: "0.005",
+    athIDORoi: "17.46",
+    athIDORoiGreen: "(+17056.5%)",
+    hinox: "2,000,000",
+    leadVcIcon: tableProjectItem,
+    leadVc: "Binance",
+    salesDate: "7 April, 2023",
+  },
+];
 
 const CompletedProjects = () => {
+  const [searchValue, setSearchValue] = useState("");
+  const [filteredData, setFilteredData] = useState([]);
+
+  useEffect(() => {
+    const filtered = tableRows.filter((el, idx) =>
+      (el.name + el.leadVc).toLowerCase().includes(searchValue.toLowerCase())
+    );
+    setFilteredData(filtered);
+  }, [searchValue]);
+
   return (
     <Section>
       <SectionTitle tag={103}>COMPLETED PROJECTS</SectionTitle>
@@ -32,7 +367,9 @@ const CompletedProjects = () => {
           <img src={magnifier} alt="magnifier" />
           <input
             type="text"
-            placeholder="Search by project name,Token symbol or Contract adrress"
+            placeholder="Search by project name,Token symbol or Contract address"
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
           />
         </div>
       </div>
@@ -45,11 +382,7 @@ const CompletedProjects = () => {
           <button className={classes.tag}>Descending order</button>
         </div>
 
-        <div className={classes.sort}>
-          <div className={classes.label}>Sort by:</div>
-          <div className={classes.value}>ATH ROI </div>
-          <img className={classes.arrow} src={arrowDropdown} alt="arrow" />
-        </div>
+        <Dropdown label="Sort by:" defaultSelected="ATH ROI" />
       </div>
 
       <div className={classes.tableContainer}>
@@ -69,56 +402,36 @@ const CompletedProjects = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>
-                <div className={classes.withImage}>
-                  <img src={tableProjectItem} alt="project" />
-                  <div>
-                    Hinox <br /> Ecosystem <br />
-                    <span className={classes.light}>(HIT)</span>
-                  </div>
-                </div>
-              </td>
-              <td>100,000</td>
-              <td>Private</td>
-              <td>$0.005</td>
-              <td>$0.005</td>
-              <td>$0.005</td>
-              <td>
-                17.46x <div className={classes.green}>(+17056.5%)</div>
-              </td>
-              <td>$ 2,000,000</td>
-              <td>
-                <img src={tableProjectItem} alt="project" />
-                <div>Binance</div>
-              </td>
-              <td>7 April, 2023</td>
-            </tr>
-            <tr>
-              <td>
-                <div className={classes.withImage}>
-                  <img src={tableProjectItem} alt="project" />
-                  <div>
-                    Hinox <br /> Ecosystem <br />
-                    <span className={classes.light}>(HIT)</span>
-                  </div>
-                </div>
-              </td>
-              <td>100,000</td>
-              <td>Private</td>
-              <td>$0.005</td>
-              <td>$0.005</td>
-              <td>$0.005</td>
-              <td>
-                17.46x <div className={classes.green}>(+17056.5%)</div>
-              </td>
-              <td>$ 2,000,000</td>
-              <td>
-                <img src={tableProjectItem} alt="project" />
-                <div>Binance</div>
-              </td>
-              <td>7 April, 2023</td>
-            </tr>
+            {filteredData.map((el, idx) => {
+              return (
+                <tr key={"table-row-" + idx}>
+                  <td>
+                    <div className={classes.withImage}>
+                      <img src={el.icon} alt="project" />
+                      <div>
+                        {el.name}
+                        {el.hit && <div className={classes.light}>(HIT)</div>}
+                      </div>
+                    </div>
+                  </td>
+                  <td>{el.participants}</td>
+                  <td>{el.access}</td>
+                  <td>{el.idoPrice}</td>
+                  <td>{el.currentPrice}</td>
+                  <td>{el.ath}</td>
+                  <td>
+                    {el.athIDORoi}{" "}
+                    <div className={classes.green}>{el.athIDORoiGreen}</div>
+                  </td>
+                  <td>$ {el.hinox}</td>
+                  <td>
+                    <img src={el.leadVcIcon} alt="project" />
+                    <div>{el.leadVc}</div>
+                  </td>
+                  <td>{el.salesDate}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
@@ -131,11 +444,7 @@ const CompletedProjects = () => {
             <img src={arrowDropdown2} alt="arrow" />
           </div>
         </div>
-
-        <button className={classes.loadMore}>
-          <img src={loadMore} alt="loadMore" />
-          <div>Load More</div>
-        </button>
+        <LoadMore />
 
         <div className={classes.pagination}>
           <button className={clsx(classes.paginationItem, classes.active)}>

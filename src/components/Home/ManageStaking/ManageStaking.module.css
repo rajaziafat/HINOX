@@ -33,6 +33,18 @@
   align-items: center;
   gap: 5px;
   margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1024px) {
+  .stakings .stakingItemContent {
+    gap: 20px;
+  }
+
+  .stakings .stakingItemContent > div {
+    min-width: 90px;
+    flex-shrink: 0;
+  }
 }
 
 .stakings .stakingItemContent .percent1,
@@ -103,11 +115,20 @@
   color: #1ced86;
 }
 
+@media screen and (max-width: 1024px) {
+  .actionsWrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .actions {
   display: inline-flex;
   padding: 0px 4px 0px 2px;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .actions button {
@@ -128,6 +149,7 @@
   font-weight: 600;
   line-height: 27px; /* 168.75% */
   text-transform: capitalize;
+  flex-shrink: 0;
 }
 
 .actions button:nth-child(2) {
@@ -148,6 +170,20 @@
 .stakingTable table {
   width: 100%;
   border-collapse: collapse;
+}
+
+@media screen and (max-width: 1024px) {
+  .stakingTable {
+    overflow: auto;
+  }
+
+  .stakingTable::-webkit-scrollbar {
+    height: 0;
+  }
+
+  .stakingTable table {
+    min-width: 850px;
+  }
 }
 
 .stakingTable table th {

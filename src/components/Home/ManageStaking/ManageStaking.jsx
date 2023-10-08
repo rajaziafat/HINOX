@@ -1,8 +1,8 @@
+import { Link } from "react-router-dom";
+
 import Section from "components/common/Section/Section";
 import SectionTitle from "components/common/SectionTitle/SectionTitle";
-
 import classes from "./ManageStaking.module.css";
-import { Link } from "react-router-dom";
 
 const ManageStaking = () => {
   return (
@@ -54,9 +54,11 @@ const ManageStaking = () => {
                 ≈ <span className={classes.green}>$17056.5</span>
               </div>
             </div>
-            <div className={classes.actions}>
-              <button>Harvest All</button>
-              <button>Manage</button>
+            <div className={classes.actionsWrap}>
+              <div className={classes.actions}>
+                <button>Harvest All</button>
+                <button>Manage</button>
+              </div>
             </div>
           </div>
         </div>
@@ -102,9 +104,11 @@ const ManageStaking = () => {
                 ≈ <span className={classes.green}>$17056.5</span>
               </div>
             </div>
-            <div className={classes.actions}>
-              <button>Harvest All</button>
-              <button>Manage</button>
+            <div className={classes.actionsWrap}>
+              <div className={classes.actions}>
+                <button>Harvest All</button>
+                <button>Manage</button>
+              </div>
             </div>
           </div>
         </div>

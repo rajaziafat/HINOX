@@ -1,0 +1,43 @@
+.datePickerRoot {
+  position: relative;
+}
+
+.datePickerRoot input {
+  border-radius: 20px;
+  border: 1px solid #363b47;
+  width: 154.494px;
+  height: 50px;
+  flex-shrink: 0;
+  background-color: transparent;
+  color: #fff;
+  outline: none;
+  text-align: center;
+  padding-right: 40px;
+  font-family: Poppins;
+}
+
+@media screen and (max-width: 640px) {
+  .datePickerRoot {
+    width: 100%;
+  }
+
+  .datePickerRoot input {
+    width: 100%;
+  }
+}
+
+.datePickerRoot input:placeholder {
+  color: #c2c2c2;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.datePickerRoot img {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+}

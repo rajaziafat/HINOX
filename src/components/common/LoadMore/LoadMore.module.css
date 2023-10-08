@@ -1,0 +1,18 @@
+.loadMore {
+  display: flex;
+  width: 188px;
+  height: 50px;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+  border-radius: 10px;
+  background: #303a46;
+}

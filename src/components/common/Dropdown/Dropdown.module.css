@@ -1,0 +1,44 @@
+.dropdown {
+  width: 257px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 1px solid rgba(229, 243, 255, 0.26);
+  display: flex;
+  align-items: center;
+  padding: 13px 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+@media screen and (max-width: 640px) {
+  .dropdown {
+    width: 100%;
+  }
+}
+
+.dropdown .label {
+  border-right: 1px solid rgba(229, 243, 255, 0.26);
+  padding-right: 20px;
+  color: rgba(229, 243, 255, 0.46);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+}
+
+.dropdown .value {
+  color: rgba(229, 243, 255, 0.5);
+  text-align: center;
+  flex-grow: 1;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 142.857% */
+}
+
+.dropdown .arrow {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}

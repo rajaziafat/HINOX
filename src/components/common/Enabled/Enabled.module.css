@@ -1,0 +1,26 @@
+.reserveBoxes {
+  display: flex;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 640px) {
+  .reserveBoxes {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .reserveBoxes > img {
+    transform: rotate(90deg);
+  }
+}
+
+.reserveBox {
+  color: #d6edff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background-color: #242b33;
+  border-radius: 10px;
+}

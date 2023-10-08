@@ -33,15 +33,211 @@
 }
 
 .projects {
+  position: relative;
+}
+
+.projects .arrows {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 160px;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+}
+
+.projects .arrows button {
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .projects .projectCard .projectCardHead {
   padding: 12px 20px;
 }
 
+.projects .projectCard .projectCardBody {
+  border-radius: 0px 0px 16px 16px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px 12px;
+}
+
+.projects .projectCard .projectCardBody .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(229, 243, 255, 0.5);
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.projects .projectCard .projectCardBody .title .white {
+  color: #e5f3ff;
+}
+
+.projects .projectCard .projectCardBody .title .live {
+  display: inline-flex;
+  padding: 7px 12px 6px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  border-radius: 10px;
+  background: linear-gradient(
+      0deg,
+      rgba(69, 207, 221, 0.5) 0%,
+      rgba(69, 207, 221, 0.5) 100%
+    ),
+    #7dd87d;
+  color: #18332e;
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.projects .projectCard .projectCardBody .title .open {
+  display: inline-flex;
+  padding: 7px 12px 6px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  border-radius: 10px;
+  background: linear-gradient(
+      0deg,
+      rgba(236, 163, 245, 0.2) 0%,
+      rgba(236, 163, 245, 0.2) 100%
+    ),
+    #cfff8d;
+  color: #18332e;
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.projects .projectCard .projectCardBody .title .circle {
+  border-radius: 38px;
+  border: 2px solid #18332e;
+  background: rgba(91, 167, 138, 0);
+}
+
+.projects .projectCard .projectCardBody .progress {
+  color: #effffc;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 16px;
+}
+
+.projects .projectCard .projectCardBody .loader {
+  height: 39px;
+  border-radius: 8px;
+  background: rgba(214, 237, 255, 0.03);
+  margin-top: 2px;
+  padding: 10px;
+}
+
+.projects .projectCard .projectCardBody .participants {
+  border-radius: 8px;
+  background: rgba(214, 237, 255, 0.03);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  color: rgba(207, 255, 141, 0.5);
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  padding: 7px;
+  margin-top: 11px;
+}
+
+.projects .projectCard .projectCardBody .loaderMain {
+  width: 40%;
+  border-radius: 4px;
+  background: #65cdba;
+  height: 19px;
+}
+
+.projects .projectCard .projectCardBody .shortStatsDesc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #effffc;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 2px;
+  margin-bottom: 12px;
+}
+
+.projects .projectCard .projectCardBody .shortStatsDesc .big {
+  font-size: 15px;
+}
+
+.projects .projectCard .projectCardBody .statsDesc {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(229, 243, 255, 0.5);
+  border-bottom: 2px dashed rgba(229, 243, 255, 0.12);
+}
+
+.projects .projectCard .projectCardBody .statsDesc .white {
+  color: #e5f3ff;
+}
+
+.projects .projectCard .projectCardBody .participate {
+  margin-top: 34px;
+  width: 100%;
+  border-radius: 10px;
+  height: 49px;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.25) 0%,
+      rgba(0, 0, 0, 0.25) 100%
+    ),
+    #1ced86;
+  color: #18332e;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.projects .projectCard .projectCardBody .register {
+  border-radius: 10px;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.25) 0%,
+      rgba(0, 0, 0, 0.25) 100%
+    ),
+    #dcf08d;
+  color: #18332e;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 600;
+  width: 100%;
+  height: 49px;
+  flex-shrink: 0;
+  margin-top: 10px;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+
 .projects .projectCard .projectCardHead .top {
   display: flex;
   justify-content: space-between;
+  height: 49px;
+  flex-shrink: 0;
 }
 
 .projects .projectCard .projectCardHead .top .left {
@@ -75,4 +271,8 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 1.75;
+}
+
+.slide {
+  padding-bottom: 3rem;
 }

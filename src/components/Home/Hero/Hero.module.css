@@ -5,10 +5,28 @@
   border-radius: 26px;
 }
 
+@media screen and (max-width: 767px) {
+  .hero {
+    padding: 18px 10px;
+  }
+}
+
 .heroMain {
   display: flex;
   align-items: center;
   gap: 50px;
+}
+
+@media screen and (max-width: 1280px) {
+  .heroMain {
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .heroMain {
+    flex-direction: column;
+  }
 }
 
 .card1 {
@@ -16,6 +34,12 @@
   border-radius: 26px;
   overflow: hidden;
   background-color: #242b33cc;
+}
+
+@media screen and (max-width: 1024px) {
+  .card1 {
+    width: 100%;
+  }
 }
 
 .card1 .cardTitle {
@@ -51,6 +75,12 @@
   font-weight: 300;
 }
 
+@media screen and (max-width: 640px) {
+  .card1 .cardTitle {
+    gap: 20px;
+  }
+}
+
 .card1 .upcoming {
   border: 1px solid #feffbb80;
   background-color: #feffbb21;
@@ -72,6 +102,13 @@
   padding: 6px 32px;
 }
 
+@media screen and (max-width: 640px) {
+  .card1 .cardBody {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 .card1 .cardBody p {
   color: #d6edff99;
   font-weight: 500;
@@ -86,7 +123,8 @@
 
 .card1 .cardFooter .top {
   display: flex;
-  gap: 30px;
+  flex-wrap: wrap;
+  gap: 10px;
   align-items: center;
   justify-content: space-between;
 }
@@ -104,6 +142,7 @@
   background-color: #242b33cc;
   padding: 6px;
   display: flex;
+  flex-shrink: 0;
 }
 
 .card1 .bnbContainer .text {
@@ -136,6 +175,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .btn.lg {
@@ -161,61 +201,15 @@
   gap: 16px;
 }
 
-.card2 .cardTitle .cardTitleleft {
-  flex-grow: 1;
-  max-width: 290px;
-}
+@media screen and (max-width: 640px) {
+  .card2 {
+    width: 100%;
+  }
 
-.card2 .cardTitle .cardTitleleft .item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  padding: 6px 0;
-  position: relative;
-}
-
-.card2 .cardTitle .cardTitleleft .item::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 80%;
-  transform: translateX(-50%);
-  height: 1px;
-  border-bottom: 2px dashed #e5f3ff1f;
-}
-
-.card2 .cardTitle .cardTitleleft .item .itemLeft {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 6px;
-  color: #e5f3ff66;
-  font-size: 12px;
-}
-
-.card2 .cardTitle .cardTitleleft .item .true,
-.card2 .cardTitle .cardTitleleft .item .false {
-  width: 60px;
-  height: 23px;
-  border-radius: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  font-size: 12px;
-}
-
-.card2 .cardTitle .cardTitleleft .item .false {
-  background-color: #f66d6d;
-  color: #771b1bcc;
-}
-
-.card2 .cardTitle .cardTitleleft .item .true {
-  background-color: #56ea9d;
-  color: #1a623c;
+  .card2 .cardTitle {
+    flex-direction: column;
+    padding: 0 16px 12px;
+  }
 }
 
 .card2 .cardTitle .cardTitleRight {
@@ -239,6 +233,13 @@
 
 .card2 .cardBody {
   padding: 18px 28px;
+}
+
+@media screen and (max-width: 640px) {
+  .card2 .cardBody {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 
 .card2 .cardBody .loaderTop {
@@ -285,6 +286,8 @@
   padding-top: 2px;
   font-size: 18px;
   color: #e5f3ff80;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .card2 .cardBody .loaderBottom .white {
@@ -294,6 +297,12 @@
 .card2 .cardFooter {
   padding: 28px;
   background-color: #2a30354d;
+}
+
+@media screen and (max-width: 640px) {
+  .card2 .cardFooter {
+    padding: 16px;
+  }
 }
 
 .card2 .cardFooter button {

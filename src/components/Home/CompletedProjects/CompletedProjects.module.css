@@ -271,37 +271,6 @@
   cursor: pointer;
 }
 
-.actions .pagination {
-  display: flex;
-  gap: 10px;
-}
-
-.actions .pagination .paginationItem {
-  display: flex;
-  width: 50px;
-  height: 50px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  border-radius: 100px;
-  background-color: #303a46;
-  color: #fff;
-  text-align: center;
-  font-family: Inter;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 27px; /* 180% */
-  text-transform: capitalize;
-}
-
-.actions .pagination .paginationItem.active {
-  background: #1ced86;
-  color: #18332e;
-}
-
 .stats {
   display: flex;
   gap: 20px;

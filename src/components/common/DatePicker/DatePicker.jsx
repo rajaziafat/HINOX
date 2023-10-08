@@ -4,7 +4,7 @@ import classes from "./Date.module.css";
 const StartDate = ({ ...rest }) => {
   return (
     <div className={classes.datePickerRoot}>
-      <input type="text" {...rest} />
+      <input type="date" {...rest} />
       <img src={calendar} alt="calendar" />
     </div>
   );

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import DataTable from "react-data-table-component";
 import clsx from "clsx";
 
@@ -6,6 +6,7 @@ import Section from "components/common/Section/Section";
 import Dropdown from "components/common/Dropdown/Dropdown";
 import DatePicker from "components/common/DatePicker/DatePicker";
 import {
+  arrowDropdown2,
   magnifier,
   openLink,
   tableHarvested,
@@ -15,6 +16,8 @@ import {
 } from "images";
 import classes from "./StakingTable.module.css";
 import MenuContainer from "components/common/MenuContainer/MenuContainer";
+import LoadMore from "components/common/LoadMore/LoadMore";
+import Pagination from "components/common/Pagination/Pagination";
 
 const columns = [
   {
@@ -205,6 +208,14 @@ const StakingTable = () => {
   const [currentItems, setCurrentItems] = useState([]);
   const [selectedTab, setSelectedTab] = useState("Activities History");
   const [selectedFilter, setSelectedFilter] = useState("All Activities");
+  const [itemsPerPage, setItemsPerPage] = useState(5);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const currentTableData = useMemo(() => {
+    const firstPageIndex = (currentPage - 1) * itemsPerPage;
+    const lastPageIndex = firstPageIndex + itemsPerPage;
+    return currentItems.slice(firstPageIndex, lastPageIndex);
+  }, [currentPage, itemsPerPage, currentItems]);
 
   useEffect(() => {
     const filterd = rawData.filter((el) => {
@@ -263,7 +274,31 @@ const StakingTable = () => {
         </div>
 
         <div className={classes.tableContainer}>
-          <DataTable columns={columns} data={currentItems} />
+          <DataTable columns={columns} data={currentTableData} />
+        </div>
+
+        <div className={classes.actions}>
+          <div className={classes.rowsContainer}>
+            <div>Row Per Page</div>
+            <MenuContainer
+              onSelect={(val) => setItemsPerPage(val.label)}
+              options={[{ label: 5 }, { label: 10 }, { label: 15 }]}
+              defaultSelected={itemsPerPage}
+            >
+              <div className={classes.rowSelector}>
+                {itemsPerPage} <div className={classes.line}></div>{" "}
+                <img src={arrowDropdown2} alt="arrow" />
+              </div>
+            </MenuContainer>
+          </div>
+          <LoadMore />
+          <Pagination
+            currentPage={currentPage}
+            totalCount={currentItems.length}
+            pageSize={itemsPerPage}
+            onPageChange={(page) => setCurrentPage(page)}
+            siblingCount={0}
+          />
         </div>
       </div>
     </Section>

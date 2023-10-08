@@ -103,3 +103,9 @@ button {
 .splide__pagination .splide__pagination__page.is-active::after {
   content: url("./images/pagination-active.svg");
 }
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}

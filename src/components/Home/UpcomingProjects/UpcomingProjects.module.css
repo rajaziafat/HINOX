@@ -47,6 +47,12 @@
   z-index: 4;
 }
 
+@media screen and (max-width: 767px) {
+  .projects .arrows {
+    width: 240px;
+  }
+}
+
 .projects .arrows button {
   background-color: transparent;
   cursor: pointer;

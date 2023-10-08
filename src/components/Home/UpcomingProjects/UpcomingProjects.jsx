@@ -49,6 +49,12 @@ const UpcomingProjects = () => {
             arrows: false,
             perPage: 2,
             gap: 14,
+
+            breakpoints: {
+              767: {
+                perPage: 1,
+              },
+            },
           }}
         >
           {new Array(3).fill(0).map((el, idx) => {

@@ -52,6 +52,13 @@
   cursor: pointer;
 }
 
+.projects .projectCard {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .projects .projectCard .projectCardHead {
   padding: 12px 20px;
 }
@@ -70,6 +77,8 @@
   font-family: Inter;
   font-size: 18px;
   font-weight: 600;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .projects .projectCard .projectCardBody .title .white {
@@ -236,13 +245,27 @@
 .projects .projectCard .projectCardHead .top {
   display: flex;
   justify-content: space-between;
-  height: 49px;
+  /* height: 49px; */
   flex-shrink: 0;
+  gap: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+  .projects .projectCard .projectCardHead .top {
+    flex-direction: column;
+  }
 }
 
 .projects .projectCard .projectCardHead .top .left {
   display: flex;
   gap: 10px;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .projects .projectCard .projectCardHead .top {
+    flex-direction: column;
+  }
 }
 
 .projects .projectCard .projectCardHead .top .left .title {
@@ -264,6 +287,11 @@
   color: #e5f3ff;
   text-align: right;
   margin-top: 10px;
+}
+@media screen and (max-width: 1024px) {
+  .projects .projectCard .projectCardHead .top .right .approx {
+    text-align: left;
+  }
 }
 
 .projects .projectCard .projectCardHead p {

@@ -17,12 +17,19 @@ const Modals = () => {
   return (
     <Section>
       <div className={classes.modalsSection}>
-        <button onClick={() => setModal1Active(true)}>Modal 1</button>
-        <button onClick={() => setModal2Active(true)}>Modal 2</button>
+        <button className={classes.btn} onClick={() => setModal1Active(true)}>
+          Modal 1
+        </button>
+        <button className={classes.btn} onClick={() => setModal2Active(true)}>
+          Modal 2
+        </button>
         {modal1Active && (
           <>
             <div className={classes.overlay} />
             <div className={classes.tablesModal}>
+              <div onClick={() => setModal1Active(false)}>
+                <img className={classes.cross} src={modalCross} alt="cross" />
+              </div>
               <div className={classes.row1}>
                 <div className={classes.percent}>
                   <h3>30%</h3>

@@ -134,6 +134,7 @@
   margin-right: auto;
   position: relative;
   padding: 28px 2px 10px;
+  cursor: pointer;
 }
 
 .main .right .box .boxMain .yt {

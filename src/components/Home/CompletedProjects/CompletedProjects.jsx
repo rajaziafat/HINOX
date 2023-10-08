@@ -16,6 +16,7 @@ import {
 } from "images";
 import Dropdown from "components/common/Dropdown/Dropdown";
 import LoadMore from "components/common/LoadMore/LoadMore";
+import MenuContainer from "components/common/MenuContainer/MenuContainer";
 
 const tableRows = [
   {
@@ -343,6 +344,7 @@ const tableRows = [
 const CompletedProjects = () => {
   const [searchValue, setSearchValue] = useState("");
   const [filteredData, setFilteredData] = useState([]);
+  const [selectedFilter, setSelectedFilter] = useState("");
 
   useEffect(() => {
     const filtered = tableRows.filter((el, idx) =>
@@ -381,8 +383,13 @@ const CompletedProjects = () => {
           </button>
           <button className={classes.tag}>Descending order</button>
         </div>
-
-        <Dropdown label="Sort by:" defaultSelected="ATH ROI" />
+        <MenuContainer
+          onSelect={(val) => setSelectedFilter(val.label)}
+          options={[{ label: "ATH ROI" }, { label: "ATH ROI 2" }]}
+          defaultSelected={selectedFilter}
+        >
+          <Dropdown label="Sort by:" defaultSelected={selectedFilter} />
+        </MenuContainer>
       </div>
 
       <div className={classes.tableContainer}>

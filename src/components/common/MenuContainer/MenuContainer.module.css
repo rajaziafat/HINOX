@@ -1,0 +1,46 @@
+.menuWrap {
+  position: relative;
+}
+
+.options {
+  border-radius: 20px;
+  border: 2px solid rgba(229, 243, 255, 0.1);
+  background: #242b33;
+  box-shadow: 0px 24px 70px 10px rgba(18, 23, 30, 0.8);
+  padding: 6px;
+  margin-top: 8px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: calc(100% + 8px);
+  z-index: 4;
+}
+
+.option {
+  border-radius: 16px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  width: 100%;
+  color: #0f381d;
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 142.857% */
+  text-transform: capitalize;
+  background-color: transparent;
+  color: rgba(229, 243, 255, 0.6);
+  cursor: pointer;
+  background-color: transparent;
+  margin: 2px 0;
+  transition: 0.4s ease;
+}
+
+.option:hover,
+.option.active {
+  background: #1ced86;
+  color: #0f381d;
+}

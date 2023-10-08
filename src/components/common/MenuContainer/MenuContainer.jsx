@@ -1,17 +1,26 @@
 import { useRef, useState } from "react";
 
-import useOutsideClick from "hooks/useOutsideClick";
 import classes from "./MenuContainer.module.css";
+import clsx from "clsx";
+import useOnClickOutside from "hooks/useOnClickOutside";
 
-const MenuContainer = ({ uniqueKey, options, children }) => {
+const MenuContainer = ({
+  uniqueKey,
+  options,
+  onSelect,
+  defaultSelected,
+  children,
+}) => {
   const [isMenuActive, setIsMenuActive] = useState(false);
   const menuRef = useRef();
 
-  useOutsideClick(menuRef, () => setIsMenuActive(false));
+  useOnClickOutside(menuRef, () => {
+    setIsMenuActive(false);
+  });
 
   return (
     <div className={classes.menuWrap} ref={menuRef}>
-      <div onClick={() => setIsMenuActive}>{children}</div>
+      <div onClick={() => setIsMenuActive(true)}>{children}</div>
 
       {isMenuActive && (
         <div className={classes.options}>
@@ -19,9 +28,12 @@ const MenuContainer = ({ uniqueKey, options, children }) => {
             return (
               <div
                 key={uniqueKey + "option-" + idx}
-                className={classes.option}
+                className={clsx(
+                  classes.option,
+                  defaultSelected === el.label && classes.active
+                )}
                 onClick={() => {
-                  onselect(el);
+                  onSelect(el);
                   setIsMenuActive(false);
                 }}
               >

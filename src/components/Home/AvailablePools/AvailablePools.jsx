@@ -4,8 +4,12 @@ import SectionTitle from "components/common/SectionTitle/SectionTitle";
 import classes from "./AvailablePools.module.css";
 import clsx from "clsx";
 import { proceed } from "images";
+import MenuContainer from "components/common/MenuContainer/MenuContainer";
+import { useState } from "react";
 
 const AvailablePools = () => {
+  const [selectedFilter, setSelectedFilter] = useState("");
+
   return (
     <Section className={classes.pools}>
       <div className="text-center">
@@ -59,10 +63,16 @@ const AvailablePools = () => {
                 </div>
               </div>
             </div>
-            <div className={classes.proceed}>
-              <img src={proceed} alt="proceed" />
-              Proceed
-            </div>
+            <MenuContainer
+              onSelect={(val) => setSelectedFilter(val.label)}
+              options={[{ label: "Yes" }, { label: "No" }]}
+              defaultSelected={selectedFilter}
+            >
+              <div className={classes.proceed}>
+                <img src={proceed} alt="proceed" />
+                Proceed
+              </div>
+            </MenuContainer>
           </div>
         </div>
         <div className={classes.stakingItem}>
@@ -110,11 +120,17 @@ const AvailablePools = () => {
                   <div className={classes.statusDot}></div> Closed
                 </div>
               </div>
-            </div>
-            <div className={classes.proceed}>
-              <img src={proceed} alt="proceed" />
-              Proceed
-            </div>
+            </div>{" "}
+            <MenuContainer
+              onSelect={(val) => setSelectedFilter(val.label)}
+              options={[{ label: "Yes" }, { label: "No" }]}
+              defaultSelected={selectedFilter}
+            >
+              <div className={classes.proceed}>
+                <img src={proceed} alt="proceed" />
+                Proceed
+              </div>
+            </MenuContainer>
           </div>
         </div>
       </div>

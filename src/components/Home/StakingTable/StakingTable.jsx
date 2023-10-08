@@ -14,6 +14,7 @@ import {
   tableWithdrawal,
 } from "images";
 import classes from "./StakingTable.module.css";
+import MenuContainer from "components/common/MenuContainer/MenuContainer";
 
 const columns = [
   {
@@ -203,6 +204,7 @@ const StakingTable = () => {
   const [searchState, setSearchState] = useState("");
   const [currentItems, setCurrentItems] = useState([]);
   const [selectedTab, setSelectedTab] = useState("Activities History");
+  const [selectedFilter, setSelectedFilter] = useState("All Activities");
 
   useEffect(() => {
     const filterd = rawData.filter((el) => {
@@ -237,7 +239,16 @@ const StakingTable = () => {
         <h3 className={classes.pageTitle}>{selectedTab}</h3>
 
         <div className={classes.tableHeading}>
-          <Dropdown label="Sort by:" defaultSelected="All Activities" />
+          <MenuContainer
+            onSelect={(val) => setSelectedFilter(val.label)}
+            options={[
+              { label: "All Activities" },
+              { label: "Claimable Activities" },
+            ]}
+            defaultSelected={selectedFilter}
+          >
+            <Dropdown label="Sort by:" defaultSelected="All Activities" />
+          </MenuContainer>
           <DatePicker placeholder="Start Date" />
           <DatePicker placeholder="End Date" />
           <div className={classes.searchContainer}>

@@ -22,10 +22,14 @@ import {
 } from "images";
 import clsx from "clsx";
 import Dropdown from "components/common/Dropdown/Dropdown";
+import MenuContainer from "components/common/MenuContainer/MenuContainer";
+import { useState } from "react";
 
 const networks = [network1, network2, network3, network4, network5, network6];
 
 const AirDrop = () => {
+  const [selectedFilter, setSelectedFilter] = useState("All Vesting");
+
   return (
     <Section>
       <div className={classes.airdrop}>
@@ -147,15 +151,16 @@ const AirDrop = () => {
       <div className={classes.filteration}>
         <div className={classes.left}>
           <div className={classes.sortContainer}>
-            <Dropdown label="Sort by:" defaultSelected="All Vesting" />
-            <div className={classes.selection}>
-              <button className={clsx(classes.selectionItem, classes.active)}>
-                All Vesting
-              </button>
-              <button className={classes.selectionItem}>
-                Claimable vesting
-              </button>
-            </div>
+            <MenuContainer
+              onSelect={(val) => setSelectedFilter(val.label)}
+              options={[
+                { label: "All Vesting" },
+                { label: "Claimable Vesting" },
+              ]}
+              defaultSelected={selectedFilter}
+            >
+              <Dropdown label="Sort by:" defaultSelected={selectedFilter} />
+            </MenuContainer>
           </div>
 
           <div className={classes.searchContainer}>
@@ -213,9 +218,15 @@ const AirDrop = () => {
             </div>
             <div className={classes.actions}>
               <button className={classes.refund}>Claim Refund</button>
-              <button className={classes.claimBtn}>
-                Claim <img src={chevronDown} alt="chevron" />
-              </button>
+              <MenuContainer
+                onSelect={(val) => {}}
+                options={[{ label: "Yes" }, { label: "No" }]}
+                defaultSelected={selectedFilter}
+              >
+                <button className={classes.claimBtn}>
+                  Claim <img src={chevronDown} alt="chevron" />
+                </button>
+              </MenuContainer>
             </div>
           </div>
           <div className={classes.right}>

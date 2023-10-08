@@ -132,12 +132,8 @@
 }
 
 .actions button {
-  display: flex;
   width: 100px;
   height: 56px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 10px;
   border-radius: 15px 0px 0px 15px;
   background: #1dfe8e;

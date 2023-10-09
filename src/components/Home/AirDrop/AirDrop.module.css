@@ -340,6 +340,7 @@
 
 .contribute {
   min-height: 400px;
+  flex-grow: 1;
   border-radius: 16px;
   background: linear-gradient(
       0deg,
@@ -354,6 +355,10 @@
   gap: 20px;
   text-align: center;
   min-width: 270px;
+}
+
+.contribute img {
+  cursor: pointer;
 }
 
 .contribute .heading {
@@ -428,10 +433,14 @@
   margin-top: 10px;
 }
 
+.projectInfoWrap {
+  margin-top: 58px;
+}
+
 .projectInfo {
   border-radius: 16px;
   background: #242b33;
-  margin-top: 58px;
+  margin-top: 10px;
 }
 
 .projectInfo .top {
@@ -559,6 +568,10 @@
   display: flex;
   gap: 10px;
   align-items: center;
+}
+
+.projectInfo .top .right .network .networkName img {
+  border-radius: 50%;
 }
 
 .lockedToken {
@@ -694,4 +707,26 @@
   letter-spacing: 0.16px;
   display: flex;
   gap: 2px;
+}
+
+.networkContainer {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #232b44;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+.networkContainer.active {
+  background-color: #1ced86;
+}
+
+.networkContainer img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
 }

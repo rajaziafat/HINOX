@@ -32,6 +32,11 @@
   color: #18332e;
 }
 
+.pagination .paginationItem.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 .arrow::before {
   position: relative;
   /* top: 3pt; Uncomment this to lower the icons as requested in comments*/

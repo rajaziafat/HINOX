@@ -43,9 +43,10 @@ const Pagination = (props) => {
       })}
     >
       <li
-        className={clsx(classes.paginationItem, {
-          disabled: currentPage === 1,
-        })}
+        className={clsx(
+          classes.paginationItem,
+          currentPage === 1 && classes.disabled
+        )}
         onClick={onPrevious}
       >
         <div className={clsx(classes.arrow, classes.left)} />
@@ -74,9 +75,10 @@ const Pagination = (props) => {
         );
       })}
       <li
-        className={clsx(classes.paginationItem, {
-          disabled: currentPage === lastPage,
-        })}
+        className={clsx(
+          classes.paginationItem,
+          currentPage === lastPage && classes.disabled
+        )}
         onClick={onNext}
       >
         <div className={clsx(classes.arrow, classes.right)} />

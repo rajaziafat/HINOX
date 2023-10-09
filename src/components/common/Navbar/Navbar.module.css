@@ -65,6 +65,7 @@
     width: 320px;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     background-color: #242b33;
     padding: 40px;
     overflow: auto;

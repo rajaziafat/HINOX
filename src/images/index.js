@@ -77,6 +77,11 @@ import hours from "./24hours.svg";
 import hamburger from "./hamburger.svg";
 import pageLeft from "./page-left.svg";
 import pageRight from "./page-right.svg";
+import firstNetwork from "./first-network.png";
+import ethereum from "./ethereum.svg";
+import fourthNetwork from "./fourth-network.png";
+import fifthNetwork from "./fifth-network.svg";
+import sixthNetwork from "./sixth-network.png";
 
 export {
   logo,
@@ -158,4 +163,9 @@ export {
   hamburger,
   pageLeft,
   pageRight,
+  firstNetwork,
+  fourthNetwork,
+  fifthNetwork,
+  sixthNetwork,
+  ethereum,
 };

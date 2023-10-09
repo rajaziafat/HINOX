@@ -1,10 +1,11 @@
 import { calendar } from "images";
+import DatePicker from "react-datepicker";
 import classes from "./Date.module.css";
 
-const StartDate = ({ ...rest }) => {
+const StartDate = ({ placeholder, value, ...rest }) => {
   return (
     <div className={classes.datePickerRoot}>
-      <input type="date" {...rest} />
+      <DatePicker selected={value} placeholderText={placeholder} {...rest} />
       <img src={calendar} alt="calendar" />
     </div>
   );

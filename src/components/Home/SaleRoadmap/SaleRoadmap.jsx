@@ -4,8 +4,44 @@ import { planet, saleRoadmap, tickCircle, tickCircleGrey } from "images";
 import clsx from "clsx";
 import Enabled from "components/common/Enabled/Enabled";
 import Allocation from "components/common/Allocation/Allocation";
+import React, { useState } from "react";
+
+const roadmapItems = [
+  {
+    title: "REGISTRATION STARTS",
+    date: "15 Mar,2023",
+    time: "22:11 UTC",
+  },
+  {
+    title: "REGISTRATION ENDS",
+    date: "15 Mar,2023",
+    time: "22:11 UTC",
+  },
+  {
+    title: "EXECUTIVE ROUND",
+    date: "15 Mar,2023",
+    time: "22:11 UTC",
+  },
+  {
+    title: "STAKERS ROUND",
+    date: "15 Mar,2023",
+    time: "22:11 UTC",
+  },
+  {
+    title: "COMMUNITY ONGOING",
+    date: "15 Mar,2023",
+    time: "22:11 UTC",
+  },
+  {
+    title: "SALES ENDED",
+    date: "15 Mar,2023",
+    time: "22:11 UTC",
+  },
+];
 
 const SaleRoadmap = () => {
+  const [currentStep, setCurrentStep] = useState(2);
+
   return (
     <Section>
       <div className={classes.box}>
@@ -29,16 +65,39 @@ const SaleRoadmap = () => {
           </div>
         </div>
         <div className={classes.boxBottom}>
-          <div className={clsx(classes.step, classes.complete)}>
-            <div className={classes.tickContainer}>
-              <img src={tickCircle} alt="tick-circle" />
-            </div>
-            <div className={classes.title}>REGISTRATION STARTS</div>
-            <div className={classes.smallText}>Date: 15 Mar,2023</div>
-            <div className={classes.smallText}>Time: 22:11 UTC</div>
-          </div>
-          <div className={clsx(classes.line, classes.complete)}></div>
-          <div className={clsx(classes.step, classes.complete)}>
+          {roadmapItems.map((el, idx) => {
+            return (
+              <React.Fragment key={"roadmap-item-" + idx}>
+                <div
+                  className={clsx(
+                    classes.step,
+                    idx + 1 <= currentStep && classes.complete
+                  )}
+                  onClick={() => setCurrentStep(idx + 1)}
+                >
+                  <div className={classes.tickContainer}>
+                    <img
+                      src={idx + 1 <= currentStep ? tickCircle : tickCircleGrey}
+                      alt="tick-circle"
+                    />
+                  </div>
+                  <div className={classes.title}>{el.title}</div>
+                  <div className={classes.smallText}>Date: {el.date}</div>
+                  <div className={classes.smallText}>Time: {el.time}</div>
+                </div>
+                {idx < roadmapItems.length - 1 && (
+                  <div
+                    className={clsx(
+                      classes.line,
+                      idx + 1 < currentStep && classes.complete,
+                      idx + 1 === currentStep && classes.completing
+                    )}
+                  ></div>
+                )}
+              </React.Fragment>
+            );
+          })}
+          {/* <div className={clsx(classes.step, classes.complete)}>
             <div className={classes.tickContainer}>
               <img src={tickCircleGrey} alt="tick-circle" />
             </div>
@@ -81,7 +140,7 @@ const SaleRoadmap = () => {
             <div className={classes.title}>SALES ENDED</div>
             <div className={classes.smallText}>Date: 15 Mar,2023</div>
             <div className={classes.smallText}>Time: 22:11 UTC</div>
-          </div>
+          </div> */}
         </div>
       </div>
     </Section>

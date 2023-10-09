@@ -16,8 +16,16 @@ import classes from "./Hero.module.css";
 import { bnb } from "images";
 import clsx from "clsx";
 import TrueFalse from "components/common/TrueFalse/TrueFalse";
+import { useTimer } from "react-timer-hook";
+
+const time = new Date();
+time.setSeconds(time.getSeconds() + 60 * 60 * 25 + 60 * 60);
 
 const Hero = () => {
+  const { seconds, minutes, hours } = useTimer({
+    expiryTimestamp: time,
+  });
+
   return (
     <Section>
       <div className={classes.hero}>
@@ -89,7 +97,9 @@ const Hero = () => {
               <div className={classes.cardTitleRight}>
                 <img src={protectedIdo} alt="protected-ido" />
                 <div className={classes.roundEnds}>Round Ends</div>
-                <div className={classes.roundTime}>25h:55m:12s</div>
+                <div className={classes.roundTime}>
+                  {hours}h:{minutes}m:{seconds}s
+                </div>
               </div>
             </div>
             <div className={classes.cardBody}>

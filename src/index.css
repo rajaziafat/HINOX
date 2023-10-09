@@ -81,7 +81,12 @@ button {
 }
 
 .splide__pagination {
-  /* bottom: rem; */
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+  z-index: 3;
 }
 
 .splide__pagination .splide__pagination__page {
@@ -108,4 +113,8 @@ input[type="date"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-calendar-picker-indicator {
   display: none;
   -webkit-appearance: none;
+}
+input[type="date"]::-webkit-clear-button {
+  -webkit-appearance: none;
+  display: none;
 }

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { cloneElement, useEffect, useMemo, useState } from "react";
 import DataTable from "react-data-table-component";
 import clsx from "clsx";
 
@@ -38,7 +38,7 @@ const columns = [
     name: "Date",
     selector: (row) => row.date,
     sortable: true,
-    cell: (row) => <div>{row.date}</div>,
+    cell: (row) => <div>{row.date.toDateString()}</div>,
   },
   {
     name: "Amount(BST)",
@@ -73,128 +73,144 @@ const columns = [
 const rawData = [
   {
     action: "Stake for 12 months",
+    type: "stake",
     actionImg: tableStake,
-    date: "Mar 21, 2022",
+    date: new Date(2022, 5, 21),
     amount: "100,000,000",
     status: "Confirmed",
     txId: "0xf371.....cf47",
   },
   {
     action: "Unstaged from 30 kjasdfasdf",
+    type: "unstaged",
     actionImg: tableLock,
-    date: "Mar 21, 2022",
+    date: new Date(2022, 6, 21),
+    amount: "100,000,000",
+    status: "Unconfirmed",
+    txId: "0xasd1.....cf47",
+  },
+  {
+    action: "Harvested from 30 kjasdfasdf",
+    type: "harvested",
+    actionImg: tableHarvested,
+    date: new Date(2022, 7, 21),
+    amount: "100,000,000",
+    status: "Unconfirmed",
+    txId: "0xdae71.....cf47",
+  },
+  {
+    action: "Withdrawal",
+    type: "withdrawal",
+    actionImg: tableWithdrawal,
+    date: new Date(2022, 8, 21),
+    amount: "100,000,000",
+    status: "Confirmed",
+    txId: "0xbc98.....cf47",
+  },
+  {
+    action: "Stake for 12 months",
+    type: "stake",
+    actionImg: tableStake,
+    date: new Date(2022, 9, 21),
+    amount: "100,000,000",
+    status: "Confirmed",
+    txId: "0xf371.....cf47",
+  },
+  {
+    action: "Unstaged from 30 kjasdfasdf",
+    type: "unstaged",
+    actionImg: tableLock,
+    date: new Date(2022, 2, 21),
     amount: "100,000,000",
     status: "Unconfirmed",
     txId: "0xf371.....cf47",
   },
   {
     action: "Harvested from 30 kjasdfasdf",
+    type: "harvested",
     actionImg: tableHarvested,
-    date: "Mar 21, 2022",
+    date: new Date(2022, 2, 21),
     amount: "100,000,000",
     status: "Unconfirmed",
     txId: "0xf371.....cf47",
   },
   {
     action: "Withdrawal",
+    type: "withdrawal",
     actionImg: tableWithdrawal,
-    date: "Mar 21, 2022",
+    date: new Date(2022, 2, 21),
     amount: "100,000,000",
     status: "Confirmed",
     txId: "0xf371.....cf47",
   },
   {
     action: "Stake for 12 months",
+    type: "stake",
     actionImg: tableStake,
-    date: "Mar 21, 2022",
+    date: new Date(2022, 2, 21),
     amount: "100,000,000",
     status: "Confirmed",
     txId: "0xf371.....cf47",
   },
   {
     action: "Unstaged from 30 kjasdfasdf",
+    type: "unstaged",
     actionImg: tableLock,
-    date: "Mar 21, 2022",
+    date: new Date(2022, 2, 21),
     amount: "100,000,000",
     status: "Unconfirmed",
     txId: "0xf371.....cf47",
   },
   {
     action: "Harvested from 30 kjasdfasdf",
+    type: "harvested",
     actionImg: tableHarvested,
-    date: "Mar 21, 2022",
+    date: new Date(2022, 2, 21),
     amount: "100,000,000",
     status: "Unconfirmed",
     txId: "0xf371.....cf47",
   },
   {
     action: "Withdrawal",
+    type: "withdrawal",
     actionImg: tableWithdrawal,
-    date: "Mar 21, 2022",
+    date: new Date(2022, 2, 21),
     amount: "100,000,000",
     status: "Confirmed",
     txId: "0xf371.....cf47",
   },
   {
     action: "Stake for 12 months",
+    type: "stake",
     actionImg: tableStake,
-    date: "Mar 21, 2022",
+    date: new Date(2022, 2, 21),
     amount: "100,000,000",
     status: "Confirmed",
     txId: "0xf371.....cf47",
   },
   {
     action: "Unstaged from 30 kjasdfasdf",
+    type: "unstaged",
     actionImg: tableLock,
-    date: "Mar 21, 2022",
+    date: new Date(2022, 2, 21),
     amount: "100,000,000",
     status: "Unconfirmed",
     txId: "0xf371.....cf47",
   },
   {
     action: "Harvested from 30 kjasdfasdf",
+    type: "harvested",
     actionImg: tableHarvested,
-    date: "Mar 21, 2022",
+    date: new Date(2022, 2, 21),
     amount: "100,000,000",
     status: "Unconfirmed",
     txId: "0xf371.....cf47",
   },
   {
     action: "Withdrawal",
+    type: "withdrawal",
     actionImg: tableWithdrawal,
-    date: "Mar 21, 2022",
-    amount: "100,000,000",
-    status: "Confirmed",
-    txId: "0xf371.....cf47",
-  },
-  {
-    action: "Stake for 12 months",
-    actionImg: tableStake,
-    date: "Mar 21, 2022",
-    amount: "100,000,000",
-    status: "Confirmed",
-    txId: "0xf371.....cf47",
-  },
-  {
-    action: "Unstaged from 30 kjasdfasdf",
-    actionImg: tableLock,
-    date: "Mar 21, 2022",
-    amount: "100,000,000",
-    status: "Unconfirmed",
-    txId: "0xf371.....cf47",
-  },
-  {
-    action: "Harvested from 30 kjasdfasdf",
-    actionImg: tableHarvested,
-    date: "Mar 21, 2022",
-    amount: "100,000,000",
-    status: "Unconfirmed",
-    txId: "0xf371.....cf47",
-  },
-  {
-    action: "Withdrawal",
-    actionImg: tableWithdrawal,
-    date: "Mar 21, 2022",
+    date: new Date(2022, 2, 21),
     amount: "100,000,000",
     status: "Confirmed",
     txId: "0xf371.....cf47",
@@ -210,6 +226,10 @@ const StakingTable = () => {
   const [selectedFilter, setSelectedFilter] = useState("All Activities");
   const [itemsPerPage, setItemsPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
+  const [formState, setFormState] = useState({
+    startDate: "",
+    endDate: "",
+  });
 
   const currentTableData = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * itemsPerPage;
@@ -219,12 +239,50 @@ const StakingTable = () => {
 
   useEffect(() => {
     const filterd = rawData.filter((el) => {
-      return (el.action + el.amount + el.date + el.status + el.txId)
-        .toLocaleLowerCase()
-        .includes(searchState.toLowerCase());
+      console.log(
+        el.txId.toLocaleLowerCase().includes(searchState.toLowerCase())
+      );
+      if (!el.txId.toLocaleLowerCase().includes(searchState.toLowerCase())) {
+        return false;
+      }
+      // if (formState.startDate && formState.endDate) {
+      //   if (
+      //     !(
+      //       el.date.getTime() <= formState.endDate.getTime() &&
+      //       el.date.getTime() >= formState.startDate.getTime()
+      //     )
+      //   ) {
+      //     return false;
+      //   }
+      // }
+      if (formState.startDate) {
+        if (!(el.date.getTime() >= formState.startDate.getTime())) {
+          return false;
+        }
+      }
+
+      if (formState.endDate) {
+        if (!(el.date.getTime() <= formState.endDate.getTime())) {
+          return false;
+        }
+      }
+
+      console.log(selectedFilter);
+      if (selectedFilter !== "All Activities") {
+        if (selectedFilter === "Stake" && el.type !== "stake") return false;
+        else if (selectedFilter === "Unstaged" && el.type !== "unstaged")
+          return false;
+        else if (selectedFilter === "Harvested" && el.type !== "harvested")
+          return false;
+        else if (selectedFilter === "Withdrawal" && el.type !== "withdrawal")
+          return false;
+      }
+
+      return true;
     });
+
     setCurrentItems(filterd);
-  }, [searchState]);
+  }, [selectedFilter, searchState, formState]);
 
   return (
     <Section>
@@ -254,14 +312,29 @@ const StakingTable = () => {
             onSelect={(val) => setSelectedFilter(val.label)}
             options={[
               { label: "All Activities" },
-              { label: "Claimable Activities" },
+              { label: "Stake" },
+              { label: "Unstaged" },
+              { label: "Harvested" },
+              { label: "Withdrawal" },
             ]}
             defaultSelected={selectedFilter}
           >
-            <Dropdown label="Sort by:" defaultSelected="All Activities" />
+            <Dropdown label="Sort by:" defaultSelected={selectedFilter} />
           </MenuContainer>
-          <DatePicker placeholder="Start Date" />
-          <DatePicker placeholder="End Date" />
+          <DatePicker
+            onChange={(date) =>
+              setFormState((prev) => ({ ...prev, startDate: date }))
+            }
+            value={formState.startDate}
+            placeholder="Start Date"
+          />
+          <DatePicker
+            onChange={(date) =>
+              setFormState((prev) => ({ ...prev, endDate: date }))
+            }
+            value={formState.endDate}
+            placeholder="End Date"
+          />
           <div className={classes.searchContainer}>
             <img src={magnifier} alt="search" />
             <input

@@ -80,6 +80,8 @@
   width: 140px;
   flex-shrink: 0;
   text-align: center;
+  cursor: pointer;
+  transition: 0.4s ease;
 }
 
 @media screen and (max-width: 1024px) {
@@ -100,6 +102,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.4s ease;
 }
 
 .boxBottom .step.complete .tickContainer {
@@ -113,6 +116,7 @@
   color: #e5f3ff;
   margin: 20px 0 8px;
   opacity: 0.6;
+  transition: 0.4s ease;
 }
 
 .boxBottom .step.complete .title {
@@ -132,6 +136,7 @@
   width: 50px;
   background-color: #e5f3ff1a;
   margin-top: 20px;
+  transition: 0.4s ease;
 }
 
 @media screen and (max-width: 1024px) {

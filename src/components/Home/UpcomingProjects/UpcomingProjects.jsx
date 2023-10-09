@@ -15,9 +15,16 @@ import SectionTitle from "components/common/SectionTitle/SectionTitle";
 import clsx from "clsx";
 import React, { useRef } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { useTimer } from "react-timer-hook";
+
+const time = new Date();
+time.setSeconds(time.getSeconds() + 60 * 60 + 15);
 
 const UpcomingProjects = () => {
   const slider = useRef();
+  const { minutes, hours } = useTimer({
+    expiryTimestamp: time,
+  });
 
   return (
     <Section>
@@ -95,7 +102,9 @@ const UpcomingProjects = () => {
                       <div className={classes.title}>
                         <h4>
                           Time Left:{" "}
-                          <span className={classes.white}>10h:7mins</span>
+                          <span className={classes.white}>
+                            {hours}h:{minutes}mins
+                          </span>
                         </h4>
                         <button className={classes.live}>
                           <div className={classes.circle}></div>
@@ -176,7 +185,9 @@ const UpcomingProjects = () => {
                       <div className={classes.title}>
                         <h4>
                           Time Left:{" "}
-                          <span className={classes.white}>10h:7mins</span>
+                          <span className={classes.white}>
+                            {hours}h:{minutes}mins
+                          </span>
                         </h4>
                         <button className={classes.open}>
                           <div className={classes.circle}></div>

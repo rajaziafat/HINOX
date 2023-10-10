@@ -1,4 +1,5 @@
-import { cloneElement, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import ReactPaginate from "react-paginate";
 import DataTable from "react-data-table-component";
 import clsx from "clsx";
 
@@ -17,7 +18,7 @@ import {
 import classes from "./StakingTable.module.css";
 import MenuContainer from "components/common/MenuContainer/MenuContainer";
 import LoadMore from "components/common/LoadMore/LoadMore";
-import Pagination from "components/common/Pagination/Pagination";
+// import Pagination from "components/common/Pagination/Pagination";
 
 const columns = [
   {
@@ -365,12 +366,24 @@ const StakingTable = () => {
             </MenuContainer>
           </div>
           <LoadMore />
-          <Pagination
+          {/* <Pagination
             currentPage={currentPage}
             totalCount={currentItems.length}
             pageSize={itemsPerPage}
             onPageChange={(page) => setCurrentPage(page)}
             siblingCount={0}
+          /> */}
+
+          <ReactPaginate
+            className="staking-table-pagination"
+            breakLabel="..."
+            nextLabel={<></>}
+            onPageChange={(event) => setCurrentPage(event.selected)}
+            pageRangeDisplayed={2}
+            pageCount={currentItems.length}
+            previousLabel={<></>}
+            renderOnZeroPageCount={null}
+            marginPagesDisplayed={2}
           />
         </div>
       </div>

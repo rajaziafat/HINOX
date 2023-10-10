@@ -27,6 +27,14 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 640px) {
+  .pagination .paginationItem {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+}
+
 .pagination .paginationItem.active {
   background: #1ced86;
   color: #18332e;

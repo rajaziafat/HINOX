@@ -1,8 +1,7 @@
 import React from "react";
-// import classnames from "classnames";
-import { usePagination, DOTS } from "hooks/usePagination";
-// import "./pagination.scss";
 import clsx from "clsx";
+
+import { usePagination, DOTS } from "hooks/usePagination";
 
 import classes from "./Pagnination.module.css";
 

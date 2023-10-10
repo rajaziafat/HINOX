@@ -6,7 +6,6 @@ import {
   arrowRightCircle,
   hidaoWorthy,
   hinoxEcosystem,
-  hours,
   pageLeft,
   pageRight,
   protectedIdo2,

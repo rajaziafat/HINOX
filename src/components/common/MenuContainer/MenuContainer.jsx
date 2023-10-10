@@ -5,6 +5,7 @@ import clsx from "clsx";
 import useOnClickOutside from "hooks/useOnClickOutside";
 
 const MenuContainer = ({
+  className,
   uniqueKey,
   options,
   onSelect,
@@ -19,7 +20,7 @@ const MenuContainer = ({
   });
 
   return (
-    <div className={classes.menuWrap} ref={menuRef}>
+    <div className={clsx(classes.menuWrap, className)} ref={menuRef}>
       <div onClick={() => setIsMenuActive(true)}>{children}</div>
 
       {isMenuActive && (

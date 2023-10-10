@@ -1469,6 +1469,7 @@ const CompletedProjects = () => {
           </button>
         </div>
         <MenuContainer
+          className={classes.sorterFilter}
           onSelect={(val) => setSelectedSorter(val.label)}
           options={[
             { label: "Project Name" },

@@ -1,11 +1,8 @@
 import {
   binanceCoin,
-  contributor,
   dribbble,
   messenger,
   protectedIdo,
-  registration,
-  staking,
   upcoming,
   whatsapp,
   youtube,

@@ -50,7 +50,7 @@ const Pagination = (props) => {
       >
         <div className={clsx(classes.arrow, classes.left)} />
       </li>
-      {paginationRange.map((pageNumber) => {
+      {paginationRange.map((pageNumber, idx) => {
         if (pageNumber === DOTS) {
           return (
             <li

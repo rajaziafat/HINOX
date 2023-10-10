@@ -54,6 +54,7 @@ const Pagination = (props) => {
         if (pageNumber === DOTS) {
           return (
             <li
+              key={"pag-dot-" + idx}
               className={clsx(classes.paginationItem, "pagination-item dots")}
             >
               &#8230;

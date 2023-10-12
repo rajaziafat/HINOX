@@ -2,7 +2,6 @@ import {
   binanceCoin,
   dribbble,
   messenger,
-  protectedIdo,
   upcoming,
   whatsapp,
   youtube,
@@ -92,7 +91,9 @@ const Hero = () => {
             <div className={classes.cardTitle}>
               <TrueFalse />
               <div className={classes.cardTitleRight}>
-                <img src={protectedIdo} alt="protected-ido" />
+                <div className={classes.IdoBtn}>
+                  <div className={classes.IdoBtnTxt}>PROTECTED IDO</div>
+                </div>
                 <div className={classes.roundEnds}>Round Ends</div>
                 <div className={classes.roundTime}>
                   {hours}h:{minutes}m:{seconds}s

@@ -294,10 +294,65 @@
   text-align: right;
   margin-top: 10px;
 }
+
 @media screen and (max-width: 1024px) {
   .projects .projectCard .projectCardHead .top .right .approx {
     text-align: left;
   }
+}
+
+.projects .projectCard .projectCardHead .top .right .hours {
+  width: 42px;
+  height: 42px;
+  border: 2px solid #c5bf7c;
+  border-radius: 50%;
+  background: transparent;
+  color: #c5bf7c;
+  text-align: right;
+  font-family: Sansita One;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  font-family: "Sansita", sans-serif;
+  font-style: italic;
+  margin-right: 8px;
+}
+
+.projects .projectCard .projectCardHead .top .right .hidaoBtn {
+  position: relative;
+  width: 127px;
+  height: 26px;
+  background: url("../../../images/hidao-worthy-bg.svg");
+  background-position: cover;
+  cursor: pointer;
+}
+
+.projects .projectCard .projectCardHead .top .right .hidaoBtn .hidaoBtnTxt {
+  color: #fff;
+  text-align: right;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%; /* 19.2px */
+  letter-spacing: 0.12px;
+  text-transform: uppercase;
+  color: transparent;
+  background-clip: text;
+  background: url("../../../images/hidao-worthy-text-bg.svg");
+  background-size: 243px 234.708px;
+  background-position-x: -64px;
+  background-position-y: -172px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
 }
 
 .projects .projectCard .projectCardHead p {

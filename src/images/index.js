@@ -13,6 +13,8 @@ import registration from "./registration.svg";
 import contributor from "./contributor.svg";
 import staking from "./staking.svg";
 import protectedIdo from "./protected-ido.svg";
+import protectedIdoBg from "./protected-ido-bg.svg";
+import protectedIdoTextBg from "./protected-ido-text-bg.svg";
 import saleRoadmap from "./sale-roadmap.svg";
 import planet from "./planet.svg";
 import emptyWalletTick from "./empty-wallet-tick.svg";
@@ -158,6 +160,8 @@ export {
   info,
   coinInsert,
   back,
+  protectedIdoBg,
+  protectedIdoTextBg,
   protectedIdo2,
   hours,
   hamburger,

@@ -4,11 +4,9 @@ import classes from "./UpcomingProjects.module.css";
 import {
   arbitrum,
   arrowRightCircle,
-  hidaoWorthy,
   hinoxEcosystem,
   pageLeft,
   pageRight,
-  protectedIdo2,
 } from "images";
 import SectionTitle from "components/common/SectionTitle/SectionTitle";
 import clsx from "clsx";
@@ -81,7 +79,11 @@ const UpcomingProjects = () => {
                           </div>
                         </div>
                         <div className={classes.right}>
-                          <img src={hidaoWorthy} alt="hidaoWorthy" />
+                          <button className={classes.hidaoBtn}>
+                            <div className={classes.hidaoBtnTxt}>
+                              HiDAO WORTHY
+                            </div>
+                          </button>
                           <div className={classes.approx}>
                             1 BUSD≈ 16.75 HIT
                           </div>
@@ -164,8 +166,12 @@ const UpcomingProjects = () => {
                         </div>
                         <div className={classes.right}>
                           <div className={classes.flex}>
-                            <img src={hours} alt="protectedIdo2" />
-                            <img src={protectedIdo2} alt="protectedIdo2" />
+                            <div className={classes.hours}>24hrs</div>
+                            <button className={classes.hidaoBtn}>
+                              <div className={classes.hidaoBtnTxt}>
+                                PROTECTED IDO
+                              </div>
+                            </button>
                           </div>
                           <div className={classes.approx}>USDT/USDC</div>
                         </div>

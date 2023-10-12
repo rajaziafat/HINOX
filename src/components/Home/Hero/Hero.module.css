@@ -218,6 +218,41 @@
   flex-shrink: 0;
 }
 
+.card2 .cardTitle .cardTitleRight .IdoBtn {
+  position: relative;
+  width: 127px;
+  height: 26px;
+  background: url("../../../images/protected-ido-bg.svg");
+  background-position: cover;
+  cursor: pointer;
+}
+
+.card2 .cardTitle .cardTitleRight .IdoBtnTxt {
+  color: #fff;
+  text-align: right;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%; /* 19.2px */
+  letter-spacing: 0.12px;
+  text-transform: uppercase;
+  color: transparent;
+  background-clip: text;
+  background: url("../../../images/protected-ido-text-bg.svg");
+  background-size: 243px 234.708px;
+  background-position-x: -12px;
+  background-position-y: -54px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+}
+
 .card2 .cardTitle .cardTitleRight .roundEnds {
   font-size: 25px;
   color: #e5f3ff80;
